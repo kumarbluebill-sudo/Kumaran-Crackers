@@ -10,15 +10,15 @@ var PRODUCTS = window.PRODUCTS_DATA || [];
 var FEATURED = window.POPULAR_DATA || [1, 11, 20, 39, 46, 58, 104, 107];
 /* Category tiles shown on the home page and as shop chips. Every catalogue category belongs to one group. */
 var GROUPS = [
-  {key: "flower-pots", name: "Flower Pots", cats: ["Flower Pots"], icon: "🌸", hue: 24},
-  {key: "sparklers", name: "Sparklers", cats: ["Sparklers"], icon: "✨", hue: 44},
-  {key: "rockets", name: "Rockets", cats: ["Sky Divers"], icon: "🚀", hue: 350},
-  {key: "fountains", name: "Fountains", cats: ["Rocking Fountain"], icon: "⛲", hue: 200},
-  {key: "sky-shots", name: "Sky Shots & Aerials", cats: ["Sky Shots", "SPL Sky Fancy", "Night Aerials"], icon: "🎆", hue: 270},
-  {key: "sound", name: "Sound Crackers & Bombs", cats: ["Sound Crackers", "Salt & Peppers", "Bombs", "Poppers"], icon: "💥", hue: 8},
-  {key: "garlands", name: "Garlands", cats: ["Garlands"], icon: "🎇", hue: 140},
-  {key: "wheels", name: "Wheels, Sticks & Matches", cats: ["Firing Wheels", "Sticks & Threads", "Matches"], icon: "🌀", hue: 170},
-  {key: "gift-boxes", name: "Gift Boxes", cats: ["Gift Boxes"], icon: "🎁", hue: 330}
+  {key: "flower-pots", img: "images/flower-pots.jpg", name: "Flower Pots", cats: ["Flower Pots"], icon: "🌸", hue: 24},
+  {key: "sparklers", img: "images/sparklers.jpg", name: "Sparklers", cats: ["Sparklers"], icon: "✨", hue: 44},
+  {key: "rockets", img: "images/rockets.png", name: "Rockets", cats: ["Sky Divers"], icon: "🚀", hue: 350},
+  {key: "fountains", img: "images/fountains.png", name: "Fountains", cats: ["Rocking Fountain"], icon: "⛲", hue: 200},
+  {key: "sky-shots", img: "images/sky-shots.jpg", name: "Sky Shots & Aerials", cats: ["Sky Shots", "SPL Sky Fancy", "Night Aerials"], icon: "🎆", hue: 270},
+  {key: "sound", img: "images/sound.png", name: "Sound Crackers & Bombs", cats: ["Sound Crackers", "Salt & Peppers", "Bombs", "Poppers"], icon: "💥", hue: 8},
+  {key: "garlands", img: "images/garlands.jpg", name: "Garlands", cats: ["Garlands"], icon: "🎇", hue: 140},
+  {key: "wheels", img: "images/wheels.jpg", name: "Wheels, Sticks & Matches", cats: ["Firing Wheels", "Sticks & Threads", "Matches"], icon: "🌀", hue: 170},
+  {key: "gift-boxes", img: "images/gift-boxes.jpg", name: "Gift Boxes", cats: ["Gift Boxes"], icon: "🎁", hue: 330}
 ];
 var ICON = {"Sound Crackers":"💥","Flower Pots":"🌸","Firing Wheels":"🌀","Salt & Peppers":"🧂","Garlands":"🎇","Bombs":"💣","Poppers":"🎉","Matches":"🔥","Sticks & Threads":"✨","Sky Divers":"🚀","Rocking Fountain":"⛲","Night Aerials":"🌌","SPL Sky Fancy":"🎆","Sky Shots":"🌈","Gift Boxes":"🎁","Sparklers":"✨"};
 function groupOfCat(c) { for (var i = 0; i < GROUPS.length; i++) if (GROUPS[i].cats.indexOf(c) > -1) return GROUPS[i]; return null; }

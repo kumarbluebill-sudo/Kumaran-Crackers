@@ -24,18 +24,20 @@ function FestivalHero() {
     '<div class="wrap hero-in"><p class="eyebrow">SIVAKASI • HAPPY DIWALI 2026</p>' +
     '<h1 id="h1">Celebrate Diwali.<br><span>Create Brighter Memories.</span></h1>' +
     '<p class="lead">Explore our festive collection from Sivakasi.</p>' +
-    '<div class="cta"><a class="btn org" href="#shop">Shop Crackers →</a><a class="btn ghost" href="#shop/gift-boxes">Explore Gift Boxes</a></div></div>' +
+    '<div class="cta"><a class="btn org" href="#shop">Shop Crackers →</a><a class="btn ghost" href="#shop/gift-boxes">Explore Gift Boxes</a></div>' +
+    '<figure class="hpic"><img src="images/hero-diwali.jpg" alt="A family celebrating Diwali with sparklers" width="522" height="350" onerror="this.parentNode.remove()"><figcaption>Happy Diwali 🪔 from Kumaran Crackers</figcaption></figure></div>' +
     '<svg class="diya" viewBox="0 0 120 80" aria-hidden="true"><path d="M8 38h104c0 24-22 40-52 40S8 62 8 38z" fill="#c9722b"/><path d="M8 38h104" stroke="#E8B84A" stroke-width="3"/><path class="flame" d="M60 6c10 12 12 20 0 30-12-10-10-18 0-30z" fill="#ffd36b"/></svg></section>';
 }
 
 function CategoryTile(g) {
   var n = PRODUCTS.filter(function (p) { return g.cats.indexOf(p.cat) > -1; }).length;
-  return '<a class="tile rv" href="#shop/' + g.key + '" style="--h:' + g.hue + '"><span class="ti" aria-hidden="true">' + g.icon + '</span><b>' + esc(g.name) + '</b><small>' + n + ' items</small></a>';
+  return '<a class="tile rv" href="#shop/' + g.key + '" style="--h:' + g.hue + '"><img class="tpic" loading="lazy" src="' + esc(g.img) + '" alt="" onerror="this.remove()"><span class="ti" aria-hidden="true">' + g.icon + '</span><span class="tl"><b>' + esc(g.name) + '</b><small>' + n + ' items</small></span></a>';
 }
 
 function Thumb(p) {
-  var im = p.img ? '<img loading="lazy" src="' + esc(p.img) + '" alt="' + esc(p.name) + '" onload="this.classList.add(\'ld\')" onerror="this.remove()">' : '';
-  return '<div class="thumb" style="--h:' + hueOf(p) + '"><span aria-hidden="true">' + (ICON[p.cat] || "🎆") + '</span>' + im + (p.img ? '' : '<em>Illustrative</em>') + '</div>';
+  var g = groupOfCat(p.cat), src = p.img || (g && g.img);
+  var im = src ? '<img loading="lazy" src="' + esc(src) + '" alt="' + (p.img ? esc(p.name) : '') + '" onload="this.classList.add(\'ld\')" onerror="this.remove()">' : '';
+  return '<div class="thumb" style="--h:' + hueOf(p) + '"><span aria-hidden="true">' + (ICON[p.cat] || "🎆") + '</span>' + im + (p.img ? '' : '<em>Category image</em>') + '</div>';
 }
 
 function ProductCard(p) {

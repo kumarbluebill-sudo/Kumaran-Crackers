@@ -8,7 +8,7 @@ var E = {}, step = 1, sent = false;
 function pageHome() {
   var feat = FEATURED.map(byNo).filter(Boolean).map(ProductCard).join("");
   return FestivalHero() +
-    '<div class="wrap sec"><h2 class="rv">Shop by category</h2><div class="tiles">' + GROUPS.map(CategoryTile).join("") + '</div>' +
+    '<div class="garland" aria-hidden="true"></div><div class="wrap sec"><h2 class="rv">Shop by category</h2><div class="tiles">' + GROUPS.map(CategoryTile).join("") + '</div>' +
     '<p class="rv" style="margin-top:12px"><a class="link" href="#shop">View all ' + PRODUCTS.length + ' products →</a></p></div>' +
     '<div class="wrap sec"><h2 class="rv">Featured festive picks</h2><div class="pgrid" id="feat">' + feat + '</div></div>' +
     '<section class="offer"><div class="wrap rv"><span class="big">₹5,000+</span><div><b>Shopping for a bigger celebration?</b><p>Ask us about special discounts on bills above ₹5,000.</p></div><a class="btn org" href="#shop">Start shopping</a></div></section>' +
