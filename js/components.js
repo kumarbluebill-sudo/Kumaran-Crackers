@@ -19,8 +19,14 @@ function FestivalHero() {
   for (var i = 0; i < 18; i++) sparks += '<i class="sp" style="left:' + ((i * 53) % 100) + '%;top:' + ((i * 37 + 11) % 90) + '%;animation-delay:' + ((i % 7) * 0.7) + 's"></i>';
   var bulbs = "";
   for (var j = 0; j < 14; j++) bulbs += '<i style="animation-delay:' + ((j % 5) * 0.5) + 's"></i>';
+  var fireworks = "", bursts = [[15, 30, "#ffd36b", 0], [84, 23, "#ff885c", 1.3], [63, 13, "#95ddff", 2.6], [39, 43, "#e9adff", 3.9]];
+  bursts.forEach(function (b) {
+    var rays = "";
+    for (var k = 0; k < 16; k++) rays += '<i style="--angle:' + (k * 22.5) + 'deg"></i>';
+    fireworks += '<span class="firework" style="--x:' + b[0] + '%;--y:' + b[1] + '%;--fw-color:' + b[2] + ';--fw-delay:' + b[3] + 's"><i class="rocket"></i>' + rays + '</span>';
+  });
   return '<section class="hero" aria-labelledby="h1"><div class="lights" aria-hidden="true">' + bulbs + '</div>' +
-    '<div class="burst b1" aria-hidden="true"></div><div class="burst b2" aria-hidden="true"></div><div class="burst b3" aria-hidden="true"></div>' + sparks +
+    '<div class="fireworks" aria-hidden="true">' + fireworks + '</div>' + sparks +
     '<div class="wrap hero-in"><p class="eyebrow">SIVAKASI • HAPPY DIWALI 2026</p>' +
     '<h1 id="h1">Celebrate Diwali.<br><span>Create Brighter Memories.</span></h1>' +
     '<p class="lead">Explore our festive collection from Sivakasi.</p>' +
